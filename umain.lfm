@@ -1,9 +1,9 @@
 object frmERPPrototyp: TfrmERPPrototyp
-  Left = 421
+  Left = 486
   Height = 700
-  Top = 173
+  Top = 279
   Width = 1221
-  HorzScrollBar.Page = 473
+  HorzScrollBar.Page = 394
   VertScrollBar.Page = 394
   AutoScroll = True
   Caption = 'ERP Prototyp 2.1'
@@ -551,7 +551,7 @@ object frmERPPrototyp: TfrmERPPrototyp
       Height = 626
       Top = 51
       Width = 1061
-      PageIndex = 2
+      PageIndex = 6
       Align = alClient
       OnResize = Notebook1Resize
       TabOrder = 3
@@ -2531,8 +2531,55 @@ object frmERPPrototyp: TfrmERPPrototyp
             end
           end
         end
+        object pnlLeadsSearchBox: TPanel
+          Left = 790
+          Height = 36
+          Top = 32
+          Width = 234
+          Anchors = [akTop, akRight]
+          BevelOuter = bvNone
+          ClientHeight = 36
+          ClientWidth = 234
+          Color = clWhite
+          ParentColor = False
+          TabOrder = 1
+          object spbtnLeadsSearchBox: TSpeedButton
+            Left = 200
+            Height = 36
+            Top = 0
+            Width = 34
+            Align = alRight
+            Caption = ''
+            Flat = True
+            Font.Height = -17
+            Font.Name = 'Segoe MDL2 Assets'
+            Font.Quality = fqCleartype
+            OnClick = spbtnAcctSearchBoxClick
+            ParentFont = False
+          end
+          object edtLeadsSearchBox: TEdit
+            Left = 2
+            Height = 32
+            Top = 2
+            Width = 198
+            Align = alClient
+            BorderSpacing.Left = 2
+            BorderSpacing.Top = 2
+            BorderSpacing.Bottom = 2
+            BorderStyle = bsNone
+            Font.Height = -20
+            Font.Name = 'Segoe UI'
+            OnExit = edtAcctSearchBoxExit
+            OnKeyDown = edtAcctSearchBoxKeyDown
+            OnMouseDown = edtAcctSearchBoxMouseDown
+            ParentFont = False
+            TabOrder = 0
+            TextHint = 'Suchbegriff'
+          end
+        end
       end
       object pgSales: TPage
+        OnBeforeShow = pgSalesBeforeShow
         object Label7: TLabel
           Left = 80
           Height = 45
@@ -3072,6 +3119,75 @@ object frmERPPrototyp: TfrmERPPrototyp
           BorderStyle = []
           Rounding = 10
           Quality = rfBestQuality
+        end
+        object Panel14: TPanel
+          Left = 17
+          Height = 498
+          Top = 96
+          Width = 1007
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          BevelOuter = bvNone
+          Caption = 'Panel14'
+          ClientHeight = 498
+          ClientWidth = 1007
+          TabOrder = 0
+          object DBGridUsers2: TDBGrid
+            Left = 0
+            Height = 498
+            Top = 0
+            Width = 1007
+            Align = alClient
+            Color = clWindow
+            Columns = <>
+            Flat = True
+            TabOrder = 0
+          end
+        end
+        object pnlSalesSearchBox: TPanel
+          Left = 790
+          Height = 36
+          Top = 32
+          Width = 234
+          Anchors = [akTop, akRight]
+          BevelOuter = bvNone
+          ClientHeight = 36
+          ClientWidth = 234
+          Color = clWhite
+          ParentColor = False
+          TabOrder = 1
+          object spbtnSalesSearchBox: TSpeedButton
+            Left = 200
+            Height = 36
+            Top = 0
+            Width = 34
+            Align = alRight
+            Caption = ''
+            Flat = True
+            Font.Height = -17
+            Font.Name = 'Segoe MDL2 Assets'
+            Font.Quality = fqCleartype
+            OnClick = spbtnAcctSearchBoxClick
+            ParentFont = False
+          end
+          object edtSalesSearchBox: TEdit
+            Left = 2
+            Height = 32
+            Top = 2
+            Width = 198
+            Align = alClient
+            BorderSpacing.Left = 2
+            BorderSpacing.Top = 2
+            BorderSpacing.Bottom = 2
+            BorderStyle = bsNone
+            Font.Height = -20
+            Font.Name = 'Segoe UI'
+            OnExit = edtAcctSearchBoxExit
+            OnKeyDown = edtAcctSearchBoxKeyDown
+            OnMouseDown = edtAcctSearchBoxMouseDown
+            ParentFont = False
+            TabOrder = 0
+            TextHint = 'Suchbegriff'
+          end
         end
       end
       object pgMarketing: TPage
@@ -3614,6 +3730,75 @@ object frmERPPrototyp: TfrmERPPrototyp
           BorderStyle = []
           Rounding = 10
           Quality = rfBestQuality
+        end
+        object pnlMarketingSearchBox: TPanel
+          Left = 790
+          Height = 36
+          Top = 32
+          Width = 234
+          Anchors = [akTop, akRight]
+          BevelOuter = bvNone
+          ClientHeight = 36
+          ClientWidth = 234
+          Color = clWhite
+          ParentColor = False
+          TabOrder = 0
+          object spbtnMarketingSearchBox: TSpeedButton
+            Left = 200
+            Height = 36
+            Top = 0
+            Width = 34
+            Align = alRight
+            Caption = ''
+            Flat = True
+            Font.Height = -17
+            Font.Name = 'Segoe MDL2 Assets'
+            Font.Quality = fqCleartype
+            OnClick = spbtnAcctSearchBoxClick
+            ParentFont = False
+          end
+          object edtMarketingSearchBox: TEdit
+            Left = 2
+            Height = 32
+            Top = 2
+            Width = 198
+            Align = alClient
+            BorderSpacing.Left = 2
+            BorderSpacing.Top = 2
+            BorderSpacing.Bottom = 2
+            BorderStyle = bsNone
+            Font.Height = -20
+            Font.Name = 'Segoe UI'
+            OnExit = edtAcctSearchBoxExit
+            OnKeyDown = edtAcctSearchBoxKeyDown
+            OnMouseDown = edtAcctSearchBoxMouseDown
+            ParentFont = False
+            TabOrder = 0
+            TextHint = 'Suchbegriff'
+          end
+        end
+        object Panel15: TPanel
+          Left = 17
+          Height = 498
+          Top = 96
+          Width = 1007
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          BevelOuter = bvNone
+          Caption = 'Panel15'
+          ClientHeight = 498
+          ClientWidth = 1007
+          TabOrder = 1
+          object DBGridUsers1: TDBGrid
+            Left = 0
+            Height = 498
+            Top = 0
+            Width = 1007
+            Align = alClient
+            Color = clWindow
+            Columns = <>
+            Flat = True
+            TabOrder = 0
+          end
         end
       end
       object pgCalendar: TPage
@@ -4726,6 +4911,79 @@ object frmERPPrototyp: TfrmERPPrototyp
           BorderStyle = []
           Rounding = 10
           Quality = rfBestQuality
+        end
+        object pnlUsersSearchBox: TPanel
+          Left = 790
+          Height = 36
+          Top = 32
+          Width = 234
+          Anchors = [akTop, akRight]
+          BevelOuter = bvNone
+          ClientHeight = 36
+          ClientWidth = 234
+          Color = clWhite
+          ParentColor = False
+          TabOrder = 0
+          object spbtnUsersSearchBox: TSpeedButton
+            Left = 200
+            Height = 36
+            Top = 0
+            Width = 34
+            Align = alRight
+            Caption = ''
+            Flat = True
+            Font.Height = -17
+            Font.Name = 'Segoe MDL2 Assets'
+            Font.Quality = fqCleartype
+            OnClick = spbtnAcctSearchBoxClick
+            ParentFont = False
+          end
+          object edtUsersSearchBox: TEdit
+            Left = 2
+            Height = 32
+            Top = 2
+            Width = 198
+            Align = alClient
+            BorderSpacing.Left = 2
+            BorderSpacing.Top = 2
+            BorderSpacing.Bottom = 2
+            BorderStyle = bsNone
+            Font.Height = -20
+            Font.Name = 'Segoe UI'
+            OnExit = edtAcctSearchBoxExit
+            OnKeyDown = edtAcctSearchBoxKeyDown
+            OnMouseDown = edtAcctSearchBoxMouseDown
+            ParentFont = False
+            TabOrder = 0
+            TextHint = 'Suchbegriff'
+          end
+        end
+        object Panel16: TPanel
+          Left = 17
+          Height = 498
+          Top = 96
+          Width = 1007
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          BevelOuter = bvNone
+          Caption = 'Panel16'
+          ClientHeight = 498
+          ClientWidth = 1007
+          TabOrder = 1
+          object DBGridUsers: TDBGrid
+            Left = 0
+            Height = 498
+            Top = 0
+            Width = 1007
+            Align = alClient
+            AutoFillColumns = True
+            Color = clWindow
+            Columns = <>
+            DataSource = DataSourceUsers
+            Flat = True
+            Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+            Scrollbars = ssAutoVertical
+            TabOrder = 0
+          end
         end
       end
       object pgSettings: TPage
@@ -10963,5 +11221,9 @@ object frmERPPrototyp: TfrmERPPrototyp
       8511FA85CE3C77F8FCC2E4C3DB66DD477B08FD7EF2A7F8303AFAB9EF76E3487F
       EFB8F5B4CCEBFF7E9B2933
     }
+  end
+  object DataSourceUsers: TDataSource
+    Left = 400
+    Top = 64
   end
 end

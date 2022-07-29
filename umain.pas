@@ -36,8 +36,16 @@ type
     BCRoundedImage9: TBCRoundedImage;
     CalendarLite1: TCalendarLite;
     DataSource1: TDataSource;
+    DataSourceUsers: TDataSource;
     DBGrid1: TDBGrid;
+    DBGridUsers: TDBGrid;
+    DBGridUsers1: TDBGrid;
+    DBGridUsers2: TDBGrid;
     edtAcctSearchBox: TEdit;
+    edtLeadsSearchBox: TEdit;
+    edtUsersSearchBox: TEdit;
+    edtMarketingSearchBox: TEdit;
+    edtSalesSearchBox: TEdit;
     FlowPanel1: TFlowPanel;
     ImageList1: TImageList;
     ImageList2: TImageList;
@@ -61,6 +69,9 @@ type
     Panel11: TPanel;
     Panel12: TPanel;
     Panel13: TPanel;
+    Panel14: TPanel;
+    Panel15: TPanel;
+    Panel16: TPanel;
     Panel4: TPanel;
     Panel5: TPanel;
     Panel6: TPanel;
@@ -81,9 +92,17 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
+    pnlLeadsSearchBox: TPanel;
     pnlIndicator: TPanel;
     pnlClient: TPanel;
+    pnlUsersSearchBox: TPanel;
+    pnlMarketingSearchBox: TPanel;
+    pnlSalesSearchBox: TPanel;
     pnlMenu: TPanel;
+    spbtnLeadsSearchBox: TSpeedButton;
+    spbtnUsersSearchBox: TSpeedButton;
+    spbtnMarketingSearchBox: TSpeedButton;
+    spbtnSalesSearchBox: TSpeedButton;
     spdbtnAcctExport: TSpeedButton;
     spdbtnAcctUpdate: TSpeedButton;
     SpeedButton1: TSpeedButton;
@@ -127,6 +146,8 @@ type
     procedure pgCalendarBeforeShow(ASender: TObject; ANewPage: TPage;
       ANewIndex: Integer);
     procedure pgDashboardBeforeShow(ASender: TObject; ANewPage: TPage;
+      ANewIndex: Integer);
+    procedure pgSalesBeforeShow(ASender: TObject; ANewPage: TPage;
       ANewIndex: Integer);
     procedure pgUsersBeforeShow(ASender: TObject; ANewPage: TPage;
       ANewIndex: Integer);
@@ -311,10 +332,29 @@ begin
 
 end;
 
-procedure TfrmERPPrototyp.pgUsersBeforeShow(ASender: TObject; ANewPage: TPage;
+procedure TfrmERPPrototyp.pgSalesBeforeShow(ASender: TObject; ANewPage: TPage;
   ANewIndex: Integer);
 begin
 
+end;
+
+procedure TfrmERPPrototyp.pgUsersBeforeShow(ASender: TObject; ANewPage: TPage;
+  ANewIndex: Integer);
+begin
+  DataSourceUsers.DataSet := DM.SQLQueryUsers;
+  with DM.SQLQueryUsers  do
+  begin
+    active := false;
+    SQL.clear;
+    SQL.Text := ' SELECT * FROM Users '+
+                ' WHERE Username LIKE '+ quotedStr('%' + edtUsersSearchBox.Text+'%')+ ' '+
+                ' ORDER BY Username';
+    active := true;
+  end;
+  DBGridUsers.Columns[0].Width:= 100;;
+  DBGridUsers.Columns[0].SizePriority:= 0;
+  DBGridUsers.Columns[1].SizePriority:= 1;
+  DBGridUsers.AutoAdjustColumns;
 end;
 
 procedure TfrmERPPrototyp.pnlMenuClick(Sender: TObject);
