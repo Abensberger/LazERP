@@ -5,5 +5,7 @@ a Lazarus clone of Delphi's - Windows10CRMDemo
 
 ![image](https://user-images.githubusercontent.com/15073221/181827067-889d1dc3-e7ec-46d5-b15f-d01a72a0b17b.png)
 
+![image](https://user-images.githubusercontent.com/15073221/181843607-0dc88044-0f68-4be7-bd0d-8ebb6970e5ad.png)
+
 ![image](https://user-images.githubusercontent.com/15073221/181841103-764bc5ce-1942-44a0-8f75-b9e41db6c71a.png)
 
