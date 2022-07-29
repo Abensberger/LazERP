@@ -4975,14 +4975,22 @@ object frmERPPrototyp: TfrmERPPrototyp
             Top = 0
             Width = 1007
             Align = alClient
+            AutoEdit = False
             AutoFillColumns = True
+            BorderStyle = bsNone
             Color = clWindow
             Columns = <>
             DataSource = DataSourceUsers
+            DefaultRowHeight = 24
+            FixedColor = 4227072
             Flat = True
-            Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+            Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+            OptionsExtra = [dgeAutoColumns]
             Scrollbars = ssAutoVertical
             TabOrder = 0
+            TitleFont.Color = clWhite
+            TitleFont.Height = -15
+            TitleFont.Name = 'Segoe UI'
           end
         end
       end

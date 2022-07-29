@@ -351,7 +351,7 @@ begin
                 ' ORDER BY Username';
     active := true;
   end;
-  DBGridUsers.Columns[0].Width:= 100;;
+  DBGridUsers.Columns[0].Width:= 90;;
   DBGridUsers.Columns[0].SizePriority:= 0;
   DBGridUsers.Columns[1].SizePriority:= 1;
   DBGridUsers.AutoAdjustColumns;
