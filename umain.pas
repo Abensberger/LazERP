@@ -6,11 +6,11 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
-  StdCtrls, ComCtrls, XMLPropStorage, DBGrids, BCRoundedImage,
+  StdCtrls, ComCtrls, XMLPropStorage, DBGrids, Grids, BCRoundedImage,
   ukachel,
   uDatamodul,
-  uAccountDetails,
-  DB;
+  uAccountDetails, CalendarLite,
+  DB, Types;
 
 const
   MenuWidthMin   = 50;
@@ -34,12 +34,14 @@ type
     BCRoundedImage7: TBCRoundedImage;
     BCRoundedImage8: TBCRoundedImage;
     BCRoundedImage9: TBCRoundedImage;
+    CalendarLite1: TCalendarLite;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     edtAcctSearchBox: TEdit;
     FlowPanel1: TFlowPanel;
     ImageList1: TImageList;
     ImageList2: TImageList;
+    ImageList_48x48_blue: TImageList;
     ImageListMenu: TImageList;
     ImageList_white: TImageList;
     Label1: TLabel;
@@ -55,7 +57,16 @@ type
     Label8: TLabel;
     Label9: TLabel;
     Notebook1: TNotebook;
+    Panel10: TPanel;
+    Panel11: TPanel;
+    Panel12: TPanel;
+    Panel13: TPanel;
     Panel4: TPanel;
+    Panel5: TPanel;
+    Panel6: TPanel;
+    Panel7: TPanel;
+    Panel8: TPanel;
+    Panel9: TPanel;
     pnlAccountDetails: TPanel;
     pnlAccountSearchBox: TPanel;
     pgAccounts: TPage;
@@ -91,7 +102,14 @@ type
     SpeedButton8: TSpeedButton;
     SpeedButton9: TSpeedButton;
     StatusBar1: TStatusBar;
+    StringGrid1: TStringGrid;
+    StringGrid2: TStringGrid;
+    StringGrid3: TStringGrid;
+    StringGrid4: TStringGrid;
     XMLPropStorage1: TXMLPropStorage;
+    procedure CalendarLite1DrawCell(Sender: TObject; ACanvas: TCanvas; AYear,
+      AMonth, ADay: Word; AState: TCalCellStates; var ARect: TRect;
+      var AContinueDrawing: Boolean);
     procedure DBGrid1DblClick(Sender: TObject);
     procedure edtAcctSearchBoxExit(Sender: TObject);
     procedure edtAcctSearchBoxKeyDown(Sender: TObject; var Key: Word;
@@ -156,27 +174,30 @@ begin
   NewLeads.Label1.Caption := 'New';
   NewLeads.Label3.Caption := IntToStr(Random(39));
   NewLeads.Name := 'NewLeads';
-  NewLeads.BCRoundedImage1.Picture.LoadFromFile('media\48x48_blue\newLead.Png');
+  ImageList_48x48_blue.GetBitmap(0,NewLeads.BCRoundedImage1.Picture.Bitmap);
+//  NewLeads.BCRoundedImage1.Picture.LoadFromFile('media\48x48_blue\newLead.Png');
   NewLeads.Parent := FlowPanel1 ;
 
   ActiveLeads := TfrKachel.Create(Self);
   ActiveLeads.Label1.Caption := 'Active';
   ActiveLeads.Label3.Caption := IntToStr(Random(39));
   ActiveLeads.Name := 'ActiveLeads';
+  ImageList_48x48_blue.GetBitmap(1,ActiveLeads.BCRoundedImage1.Picture.Bitmap);
   ActiveLeads.Parent := FlowPanel1 ;
 
   ProposalLeads := TfrKachel.Create(Self);
   ProposalLeads.Label1.Caption := 'Proposal Sent';
   ProposalLeads.Label3.Caption := IntToStr(Random(39));
   ProposalLeads.Name := 'ProposalLeads';
-  ProposalLeads.BCRoundedImage1.Picture.LoadFromFile('media\48x48_blue\ProposalSent.Png');
+  ImageList_48x48_blue.GetBitmap(2,ProposalLeads.BCRoundedImage1.Picture.Bitmap);
+//  ProposalLeads.BCRoundedImage1.Picture.LoadFromFile('media\48x48_blue\ProposalSent.Png');
   ProposalLeads.Parent := FlowPanel1 ;
 
   ClosedLeads := TfrKachel.Create(Self);
   ClosedLeads.Label1.Caption := 'Closed';
   ClosedLeads.Label3.Caption := IntToStr(Random(39));
   ClosedLeads.Name := 'ClosedLeads';
-  ClosedLeads.BCRoundedImage1.Picture.LoadFromFile('media\48x48_blue\Closed.Png');
+  ImageList_48x48_blue.GetBitmap(3,ClosedLeads.BCRoundedImage1.Picture.Bitmap);
   ClosedLeads.Parent := FlowPanel1 ;
 
   InactiveLeads := TfrKachel.Create(Self);
@@ -184,6 +205,7 @@ begin
   InactiveLeads.Label3.Caption := IntToStr(Random(39));
   InactiveLeads.Name := 'InactiveLeads';
   InactiveLeads.Panel1.Color := clRed;
+  ImageList_48x48_blue.GetBitmap(4,InactiveLeads.BCRoundedImage1.Picture.Bitmap);
   InactiveLeads.Parent := FlowPanel1 ;
 
   TotalLeads := TfrKachel.Create(Self);
@@ -194,6 +216,7 @@ begin
                                         StrToInt(ClosedLeads.Label3.Caption)+
                                         StrToInt(InactiveLeads.Label3.Caption));
   TotalLeads.Name := 'TotalLeads';
+  TotalLeads.BCRoundedImage1.Visible := False;
   TotalLeads.Parent := FlowPanel1 ;
 
   DM := TDM.Create(Self);
@@ -222,6 +245,18 @@ end;
 procedure TfrmERPPrototyp.DBGrid1DblClick(Sender: TObject);
 begin
 //  ResizePanel(pnlAccountDetails, True);
+end;
+
+procedure TfrmERPPrototyp.CalendarLite1DrawCell(Sender: TObject;
+  ACanvas: TCanvas; AYear, AMonth, ADay: Word; AState: TCalCellStates;
+  var ARect: TRect; var AContinueDrawing: Boolean);
+begin
+  if csOtherMonth in AState then
+  begin
+    ACanvas.Brush.Color := clInactiveCaption;
+    ACanvas.Font.Color := clBlack;
+    ACanvas.Font.Style := ACanvas.Font.Style - [fsBold];
+  end;
 end;
 
 procedure TfrmERPPrototyp.edtAcctSearchBoxKeyDown(Sender: TObject;
