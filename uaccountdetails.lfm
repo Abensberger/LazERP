@@ -1,0 +1,249 @@
+object frmAccountDetails: TfrmAccountDetails
+  Left = 567
+  Height = 387
+  Top = 145
+  Width = 624
+  Caption = 'Account Details'
+  ClientHeight = 387
+  ClientWidth = 624
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 337
+    Top = 0
+    Width = 624
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 337
+    ClientWidth = 624
+    TabOrder = 0
+    object Label5: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = edtAccountCity
+      Left = 20
+      Height = 21
+      Top = 136
+      Width = 27
+      BorderSpacing.Left = 20
+      Caption = 'City'
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      ParentColor = False
+      ParentFont = False
+    end
+    object edtAccountCity: TEdit
+      Left = 160
+      Height = 23
+      Top = 136
+      Width = 429
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 160
+      BorderSpacing.Top = 14
+      BorderSpacing.Right = 100
+      TabOrder = 4
+      Text = 'edtAccountCity'
+    end
+    object Label1: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = edtAccountID
+      AnchorSideRight.Control = edtAccountID
+      Left = 20
+      Height = 21
+      Top = 8
+      Width = 15
+      BorderSpacing.Left = 20
+      Caption = 'ID'
+      Font.Height = -16
+      ParentColor = False
+      ParentFont = False
+    end
+    object edtAccountID: TEdit
+      Left = 160
+      Height = 23
+      Top = 8
+      Width = 80
+      BorderSpacing.Left = 180
+      BorderSpacing.Right = 100
+      Color = 12189695
+      TabOrder = 0
+      Text = 'edtAccountID'
+    end
+    object Label2: TLabel
+      AnchorSideLeft.Control = Panel1
+      Left = 20
+      Height = 21
+      Top = 40
+      Width = 113
+      BorderSpacing.Left = 20
+      Caption = 'Company Name'
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      ParentColor = False
+      ParentFont = False
+    end
+    object edtAccountCompanyName: TEdit
+      Left = 160
+      Height = 23
+      Top = 40
+      Width = 429
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 160
+      BorderSpacing.Top = 14
+      BorderSpacing.Right = 100
+      TabOrder = 1
+      Text = 'edtAccountCompanyName'
+    end
+    object Label3: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = edtAccountAddress
+      Left = 20
+      Height = 21
+      Top = 72
+      Width = 56
+      BorderSpacing.Left = 20
+      Caption = 'Address'
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      ParentColor = False
+      ParentFont = False
+    end
+    object edtAccountAddress: TEdit
+      Left = 160
+      Height = 23
+      Top = 72
+      Width = 429
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 160
+      BorderSpacing.Top = 14
+      BorderSpacing.Right = 100
+      TabOrder = 2
+      Text = 'edtAccountAddress'
+    end
+    object Label4: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = edtAccountPostalCode
+      Left = 20
+      Height = 21
+      Top = 104
+      Width = 77
+      BorderSpacing.Left = 20
+      Caption = 'PostalCode'
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      ParentColor = False
+      ParentFont = False
+    end
+    object edtAccountPostalCode: TEdit
+      Left = 160
+      Height = 23
+      Top = 104
+      Width = 429
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 160
+      BorderSpacing.Top = 14
+      BorderSpacing.Right = 100
+      TabOrder = 3
+      Text = 'edtAccountPostalCode'
+    end
+    object Label6: TLabel
+      AnchorSideRight.Control = edtAccountID
+      Left = 80
+      Height = 15
+      Top = 211
+      Width = 0
+      Anchors = [akTop, akLeft, akRight]
+      Caption = 'Label6'
+      ParentColor = False
+    end
+    object Label7: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = edtAccountRegion
+      Left = 20
+      Height = 21
+      Top = 168
+      Width = 49
+      BorderSpacing.Left = 20
+      Caption = 'Region'
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      ParentColor = False
+      ParentFont = False
+    end
+    object edtAccountRegion: TEdit
+      Left = 160
+      Height = 23
+      Top = 168
+      Width = 429
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 160
+      BorderSpacing.Top = 14
+      BorderSpacing.Right = 100
+      TabOrder = 5
+      Text = 'edtAccountRegion'
+    end
+    object edtAccountCountry: TEdit
+      Left = 160
+      Height = 23
+      Top = 200
+      Width = 429
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 160
+      BorderSpacing.Top = 14
+      BorderSpacing.Right = 100
+      TabOrder = 6
+      Text = 'edtAccountCountry'
+    end
+    object Label8: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = edtAccountCountry
+      Left = 20
+      Height = 21
+      Top = 200
+      Width = 56
+      BorderSpacing.Left = 20
+      Caption = 'Country'
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 50
+    Top = 337
+    Width = 624
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 50
+    ClientWidth = 624
+    TabOrder = 1
+    object Shape1: TShape
+      Left = 0
+      Height = 1
+      Top = 0
+      Width = 624
+      Align = alTop
+    end
+    object spdBtnAccountSave: TSpeedButton
+      Left = 349
+      Height = 30
+      Top = 11
+      Width = 110
+      Anchors = [akTop, akRight]
+      Caption = 'Save'
+      OnClick = spdBtnAccountSaveClick
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 479
+      Height = 30
+      Top = 11
+      Width = 110
+      Anchors = [akTop, akRight]
+      Caption = 'Cancel'
+      OnClick = SpeedButton2Click
+    end
+  end
+end

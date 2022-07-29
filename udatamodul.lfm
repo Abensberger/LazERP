@@ -1,0 +1,63 @@
+object DM: TDM
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 350
+  HorizontalOffset = 567
+  VerticalOffset = 145
+  Width = 547
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    AlwaysUseBigint = False
+    Left = 55
+    Top = 32
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Left = 55
+    Top = 112
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    Macros = <>
+    Left = 55
+    Top = 192
+  end
+  object qryAccountInsert: TSQLQuery
+    FieldDefs = <>
+    Database = SQLite3Connection1
+    Options = [sqoAutoCommit]
+    Params = <>
+    Macros = <>
+    Left = 144
+    Top = 192
+  end
+  object qryAccountDelete: TSQLQuery
+    FieldDefs = <>
+    Database = SQLite3Connection1
+    Options = [sqoAutoCommit]
+    Params = <>
+    Macros = <>
+    Left = 248
+    Top = 192
+  end
+  object qryAccountUpdate: TSQLQuery
+    FieldDefs = <>
+    Database = SQLite3Connection1
+    Options = [sqoAutoCommit]
+    Params = <>
+    Macros = <>
+    Left = 368
+    Top = 192
+  end
+  object qrySelectAccountDetails: TSQLQuery
+    FieldDefs = <>
+    Database = SQLite3Connection1
+    Params = <>
+    Macros = <>
+    Left = 144
+    Top = 256
+  end
+end
