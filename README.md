@@ -1,2 +1,2 @@
 # LazERP
-a Lazarus clone of Windows10CRMDemo
+a Lazarus clone of Delphis - Windows10CRMDemo
